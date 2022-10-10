@@ -1,17 +1,21 @@
 <script setup lang="ts">
+import type { ProductInterface } from '@/interfaces/product.interface';
 
+defineProps<{
+  product: ProductInterface
+}>()
 </script>
 
 <template>
   <div class="product d-flex flex-column">
-    <div class="product-image"></div>
+    <div class="product-image" :style="{ backgroundImage: `url(${ product.image })` }"></div>
     <div class="p-10 d-flex flex-column">
-      <h4>Mocbook pro</h4>
+      <h4>{{ product.title }}</h4>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. A quidem earum fugiat ipsam eum quod doloremque porro
+        {{ product.description }}
       </p>
       <div class="d-flex flex-row align-items-center">
-        <strong class="flex-fill">Prix: 1500€</strong>
+        <strong class="flex-fill">Prix: {{ product.price }}€</strong>
         <button class="btn btn-primary">Ajouter au pannier</button>
       </div>
     </div>
@@ -27,8 +31,9 @@
   &-image {
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
-    background: url(../../assets/macbook.jpg) center/cover;
     height: 250px;
+    background-position: center;
+    background-size: cover;
   }
 }
 </style>
