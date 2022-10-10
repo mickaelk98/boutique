@@ -1,10 +1,9 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <header class="px-20 d-flex flex-row align-items-center">
     <a href="#" class="d-flex flex-row align-items-center mr-20">
-      <img src="../assets/logo.svg" alt="logo">
+      <img src="../assets/logo.svg" alt="logo" />
       <span class="logo">Shopall</span>
     </a>
     <ul class="d-flex flex-row flex-fill">
@@ -43,6 +42,5 @@ header {
       font-size: 20px;
     }
   }
-
 }
 </style>
