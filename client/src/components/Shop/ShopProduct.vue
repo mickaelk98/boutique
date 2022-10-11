@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ProductInterface } from "@/interfaces/product.interface";
+import type { ProductInterface } from "@/interfaces";
 
 defineProps<{
   product: ProductInterface;
@@ -12,10 +12,7 @@ const emit = defineEmits<{
 
 <template>
   <div class="product d-flex flex-column">
-    <div
-      class="product-image"
-      :style="{ backgroundImage: `url(${product.image})` }"
-    ></div>
+    <div class="product-image" :style="{ backgroundImage: `url(${product.image})` }"></div>
     <div class="p-10 d-flex flex-column">
       <h4>{{ product.title }}</h4>
       <p>
@@ -23,10 +20,7 @@ const emit = defineEmits<{
       </p>
       <div class="d-flex flex-row align-items-center">
         <strong class="flex-fill">Prix: {{ product.price }}€</strong>
-        <button
-          @click="emit('addProductToCart', product.id)"
-          class="btn btn-primary"
-        >
+        <button @click="emit('addProductToCart', product.id)" class="btn btn-primary">
           Ajouter au pannier
         </button>
       </div>
