@@ -157,3 +157,11 @@ body {
     background: var(--danger2);
   }
 }
+
+.btn-success {
+  background: var(--sucsess1);
+  color: var(--text-primary-color);
+  &:hover {
+    background: var(--sucsess2);
+  }
+}
